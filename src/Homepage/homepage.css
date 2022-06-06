@@ -1,9 +1,0 @@
-.btm-box {
-    background-color: var(--light-grey);
-    padding: 4rem;
-    box-shadow: var(--box-shadow);
-}
-
-.task-container {
-    overflow-y: auto;
-}
