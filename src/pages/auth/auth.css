@@ -1,0 +1,22 @@
+.auth-box {
+    background-color: var(--light-grey);
+    box-shadow: var(--box-shadow);
+    width: 18rem;
+}
+
+.input {
+    border: 1px solid var(--text-grey);
+}
+
+.input:focus-visible {
+    border: 1px solid var(--bg-blue);
+}
+
+.highlight {
+    border-bottom: 1px solid var(--accent);
+    cursor: pointer;
+}
+
+.login-btn {
+    padding: 8px 2.5rem;
+}
