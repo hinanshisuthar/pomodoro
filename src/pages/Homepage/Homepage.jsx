@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import {
   AiFillPlusCircle,
   BsFillTrashFill,
   BsPencilSquare,
-} from "../components/icons";
+} from "../../components/icons";
 import "./homepage.css";
 
 const Homepage = () => {
@@ -13,11 +14,11 @@ const Homepage = () => {
           <h1 className="text-lgt p-sm">
             Welcome back, <span className="highlight">User</span> !
           </h1>
-          <button className="btn btn-primary br-8">Login</button>
+          <Link to="/login" >
+            <button className="btn btn-primary br-8">My Account</button>
+          </Link>
         </div>
-        <h4 className="text-lgt p-sm">
-          Login to see, your tasks !
-        </h4>
+        <h4 className="text-lgt p-sm">Login to see, your tasks !</h4>
       </div>
       <div className="btm-box br-10">
         <div className="task-div flex-row-sb">
