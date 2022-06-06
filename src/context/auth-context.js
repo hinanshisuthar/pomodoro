@@ -1,15 +1,18 @@
 import { createContext, useContext, useState } from "react";
 import { logIn, logOut, signUp } from "../utilities/services";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
+  const { navigate } = useNavigate();
 
   const signupUser = async (signupCredentials) => {
     try {
       await signUp(signupCredentials);
       setToken(localStorage.getItem("token"));
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
@@ -28,6 +31,7 @@ const AuthProvider = ({ children }) => {
     try {
       await logOut();
       setToken("");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
