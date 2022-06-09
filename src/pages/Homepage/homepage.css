@@ -6,4 +6,19 @@
 
 .task-container {
     overflow-y: auto;
+    height: 15rem;
+}
+
+.input-task {
+    border: 1px solid var(--text-grey);
+    width: max-content;
+}
+
+.input-task:focus-visible {
+    border: 1px solid var(--bg-blue);
+}
+
+.task-card {
+    background-color: var(--bg-blue-lgt);
+    border-left: 2px solid var(--primary);
 }
