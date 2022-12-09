@@ -9,6 +9,37 @@
     height: 15rem;
 }
 
+.icon-user {
+    color: var(--bg-blue);
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+.icon:hover {
+    border: transparent;
+}
+
+.btn {
+    text-transform: capitalize;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--bg-blue-lgt);
+    border-radius: 2rem;
+}
+
+.btn-primary-main {
+    background-color: var(--primary);
+    border: 2px solid var(--bg-blue-lgt);
+    border-radius: 1rem;
+}
+
+.btn-box {
+    background-color: var(--bg-blue-lgt);
+    border-radius: 2rem;
+}
+
 .input-task {
     border: 1px solid var(--text-grey);
     width: max-content;

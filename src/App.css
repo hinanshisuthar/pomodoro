@@ -7,7 +7,8 @@
   --light-grey-hover: #7070704f;
   --bg-blue: #0f273b;
   --bg-blue-lgt: #9da9b3;
-  --primary: #b91c1c;
+  --primary: #c42121;
+  --primary-hover: #ac1919;
   --accent: #f59e0b;
   --accent-hover: #d97706;
   --bg-white: #f1f1f1;
@@ -29,25 +30,24 @@ form, input {
 }
 
 .btn {
-  color: var(--font-white);
-  border-radius: var(--size-2);
+  border-radius: 2rem;
   padding: 8px 1rem;
   text-transform: none;
 }
 
 .btn:hover {
-  background-color: var(--accent-hover);
-  color: var(--font-white);
-  border: 2px solid var(--accent-hover);
+  background-color: var(--primary-hover);
+  color: var(--light-grey);
+  border: 2px solid var(--primary-hover);
 }
 
 .btn-primary {
-  background-color: var(--accent);
-  border: 2px solid var(--accent);
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
 }
 
 .btn-secondary {
-  border: 2px solid var(--accent);
+  border: 2px solid var(--primary);
 }
 
 h1,

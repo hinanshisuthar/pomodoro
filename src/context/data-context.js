@@ -8,7 +8,7 @@ import {
   getDocs,
   updateDoc,
 } from "firebase/firestore";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const DataContext = createContext();
 
@@ -17,6 +17,11 @@ const DataProvider = ({ children }) => {
   const [taskInputs, setTaskInputs] = useState({
     title: "",
   });
+  const [focusDuration, setFocusDuration] = useState(1);
+  const [breakDuration, setBreakDuration] = useState(1);
+  const [focusMode, setFocusMode] = useState(true);
+  const [breakMode, setBreakMode] = useState(false);
+
   const taskCollection = collection(db, "tasks");
   const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
@@ -26,6 +31,7 @@ const DataProvider = ({ children }) => {
       const data = await getDocs(taskCollection);
       setTasklist(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
+
     getTasks();
     // eslint-disable-next-line
   }, []);
@@ -59,13 +65,15 @@ const DataProvider = ({ children }) => {
       title: taskInputs.title,
     };
     await updateDoc(selectedDoc, dataToUpdate);
-    const listAfterUpdate = tasklist.map((ele) => ele.id === id ? {...taskInputs, id: id, updatedOn: new Date()} : ele);
+    const listAfterUpdate = tasklist.map((ele) =>
+      ele.id === id ? { ...taskInputs, id: id, updatedOn: new Date() } : ele
+    );
     setTasklist(listAfterUpdate);
     setIsEditing(false);
     setTaskInputs({
       title: "",
     });
-    navigate("/")
+    navigate("/");
   };
 
   return (
@@ -80,6 +88,14 @@ const DataProvider = ({ children }) => {
         editTask,
         isEditing,
         setIsEditing,
+        focusDuration,
+        setFocusDuration,
+        breakDuration,
+        setBreakDuration,
+        focusMode,
+        setFocusMode,
+        breakMode,
+        setBreakMode
       }}
     >
       {children}
