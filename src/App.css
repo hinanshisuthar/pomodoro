@@ -1,38 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root {
+  --bg-color: #18181b;
+  --light-grey: #e2e0e0;
+  --text-grey: #8a8989;
+  --light-grey-hover: #7070704f;
+  --bg-blue: #0f273b;
+  --bg-blue-lgt: #9da9b3;
+  --primary: #c42121;
+  --primary-hover: #ac1919;
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --bg-white: #f1f1f1;
+  --box-shadow: rgba(255, 255, 255, 0.25) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  --font-family: 'Poppins', sans-serif;
+}
+
 .App {
-  text-align: center;
+  background-color: var(--bg-blue);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form, input {
+  border: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.icon {
+  color: var(--primary);
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn {
+  border-radius: 2rem;
+  padding: 8px 1rem;
+  text-transform: none;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  color: var(--light-grey);
+  border: 2px solid var(--primary-hover);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+.br-8 {
+  border-radius: 8px;
+}
+
+.br-10 {
+  border-radius: 10px;
+}
+
+.wrapper-center {
+  margin: 0 auto;
+  width: 70%;
+  height: 100vh;
+}
+
+.text-lgt {
+  color: var(--light-grey);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.vrt-30-70 {
+  grid-template-rows: 30% 1fr;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+input {
+  width: max-content;
+}
+
+.task-name {
+  display: inline;
+}
+
+.h-100 {
+  height: 100vh;
+}
+
+.flex-row-sb-start {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.flex-row-center {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
 }
